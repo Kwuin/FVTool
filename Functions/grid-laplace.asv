@@ -1,0 +1,32 @@
+function [A] = grid-laplace(L,Nx)
+%GRID-LAPLACE 均匀正方网格拉普拉斯算子
+%Grid
+x=linspace(0,L,Nx);
+dx = x(2)- x(1);
+
+%initialize Matrices
+ N = Nx^2;
+ M = zeros(N,N)
+ 
+ 
+ %内点
+ for i =2:Nx-1
+     for j = 2:Nx-1
+         n=i+(j-1)*Nx;
+         M(n,n) = -4;
+         M(n,n-1) = 1;
+         M(n,n+1) = 1;
+         M(n,n-Nx) = 1;
+         M(n,n+Nx) = 1;
+     end
+ end
+  
+ %up
+ for j = 2:Nx-1
+     
+ 
+         
+
+
+end
+
